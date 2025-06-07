@@ -39,6 +39,10 @@ export const Header = () => (
           />
         </div>
       </div>
-    </div>
-  </section>
-)
+      <div id="header-btn-cont">
+        <button className='classic-btn std-hover-active' id="service-btn">Request demo</button>
+      </div >
+      <div id="arrow-down-div"><ArrowDownSvg id="arrow-down-img" /></div>
+    </header >
+  )
+}

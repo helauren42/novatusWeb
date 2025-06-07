@@ -4,9 +4,10 @@ import { Navbar } from './Navbar';
 import { Header } from './Header'
 import { CallToAction } from './CallToAction';
 import { Footer } from './Footer';
-import { Capabilities } from './TripCardBlocks.js'
+import { Capabilities } from './TripCardBlocks'
 import { Brief } from './Brief';
 import { Benefits } from './Benefits';
+import { TargetAudience } from './TargetAudience';
 
 function App() {
   const [mobileDisplay, setMobileDisplay] = useState(false)
@@ -31,6 +32,7 @@ function App() {
       <Header />
       <Brief />
       <Capabilities />
+      <TargetAudience />
       <Benefits screenWidth={screenWidth} mobileDisplay={mobileDisplay} tabletDisplay={tabletDisplay} />
       <CallToAction />
       <Footer />

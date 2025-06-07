@@ -1,116 +1,152 @@
+/* src/CSS/Brief.css */
+
+/* Import Geist font */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;700&display=swap');
+
+/* CSS Variables */
+:root {
+  --brief-padding-vertical: 4rem;
+  --brief-gap: 2.5rem;
+  --card-gap: 1rem;
+  --card-bg: var(--main-grey);
+  --card-border: var(--dark-border2);
+  --card-shadow-color: rgba(0, 123, 255, 0.3);
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --subtext-color: rgba(255,255,255,0.8);
+}
+
+/* Section Wrapper */
 #section-brief {
   width: 100%;
-  height: auto;
-  display: grid;
-  place-items: center;
-  padding-top: 4%;
-  padding-bottom: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--brief-padding-vertical) 0;
+  position: relative;
   z-index: 1;
 }
 
+/* Content Container */
 #brief-cont {
   width: 90%;
-  max-width: 90%;
-  height: 100%;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   text-align: center;
-  gap: 3rem;
+  gap: var(--brief-gap);
 }
 
-#brief-title {
-  color: var(--text-white);
-  font-size: 2rem;
+/* Framer-inspired Heading */
+.framer-text {
+  font-family: "Geist", sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  margin: 0;
 }
 
-#brief-paragraph {
-  background-color: var(--main-grey);
-  border: 0.01rem solid var(--dark-border2);
-  box-shadow: 0px 0px 0.5rem var(--blue-shadow);
-  padding: 3% 5%;
-  border-radius: 1rem;
-  font-size: 1.5rem;
+/* Subtext Styling */
+.framer-subtext {
+  font-family: "Geist", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--subtext-color);
+  max-width: 800px;
+  margin: 0;
 }
 
+/* How It Works Section */
 #how-it-works {
   border-radius: 1rem;
   width: 100%;
-  padding: 3% 5%;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
-  color: var(--text-white);
+  gap: var(--brief-gap);
+  color: var(--text-primary);
 }
 
+/* How It Works Title */
 #how-it-works-title {
-  font-size: 1.5rem;
-  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0;
 }
 
+/* Cards Section */
 #mini-trip-cards-section {
   display: flex;
-  flex-direction: row;
-  padding: 3% 0;
-  padding-bottom: 0;
-  gap: 2%;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--card-gap);
 }
 
+/* Individual Card */
 .mini-trip-card {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  background-color: var(--main-grey);
-  border: 0.01rem solid var(--dark-border2);
-  box-shadow: 0px 0px 0.5rem var(--blue-shadow);
-  padding: 0.8rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 12px var(--card-shadow-color);
+  padding: 1.5rem;
   border-radius: 1rem;
+  width: calc(33.333% - var(--card-gap));
+  min-width: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.mini-trip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,123,255,0.45);
+}
+
+/* Card Heading */
 .mini-trip-card h3 {
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
 }
 
+/* Card Text */
 .mini-trip-card p {
-  text-align: start;
-  font-size: 0.9rem;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
-@media(max-width: 550px) {
-  #brief-title {
-    font-size: 1.7rem;
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .framer-text {
+    font-size: 3rem;
   }
-
+  .framer-subtext {
+    font-size: 1.1rem;
+  }
   #how-it-works-title {
     font-size: 1.5rem;
   }
-
-  #brief-paragraph {
-    font-size: 1.1rem;
-  }
-
-  .mini-trip-card h3 {
-    font-size: 1rem;
-  }
-
-  .mini-trip-card p {
-    font-size: 0.8rem;
+  .mini-trip-card {
+    width: calc(50% - var(--card-gap));
   }
 }
 
-@media(max-width: 400px) {
-  #brief-title {
-    font-size: 1.5rem;
+@media (max-width: 480px) {
+  .framer-text {
+    font-size: 2.5rem;
   }
-
+  .framer-subtext {
+    font-size: 1rem;
+  }
   #how-it-works-title {
     font-size: 1.3rem;
   }
-
-  #brief-paragraph {
-    font-size: 0.9rem;
+  .mini-trip-card {
+    width: 100%;
   }
 }

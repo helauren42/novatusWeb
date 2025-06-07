@@ -1,99 +1,123 @@
-header {
-  box-sizing: border-box;
+/* src/CSS/Header.css */
+
+.hero {
+  position: relative;
   width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  color: var(--text-white);
   padding: 5%;
-  background-color: var(--main-black);
-}
-
-header::before,
-header::after {
-  content: '';
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: #3b1c8c;
-  filter: blur(100px);
-  opacity: 0.4;
-  z-index: 0;
-}
-
-header::before {
-  top: -100px;
-  right: -100px;
-}
-
-header::after {
-  bottom: -100px;
-  left: -100px;
-}
-
-#header-ghost {
-  height: 10%;
-}
-
-#main-text-cont {
-  background-color: var(--main-grey);
-  flex-wrap: wrap;
-  text-align: center;
-  border: 0.01rem solid var(--dark-border2);
-  box-shadow: 0px 0px 0.5rem var(--blue-shadow);
-  padding: 3% 5%;
-}
-
-.main-text {
-  color: var(--text-white);
-  font-size: 2rem;
-  font-weight: 600;
-  text-shadow: 1.5px 1.5px var(--blue-shadow);
-}
-
-#second-text-cont {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.second-text {
-  color: var(--text-white);
-}
-
-#header-btn-cont {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  gap: 1rem;
-}
-
-#arrow-down-div {
   display: flex;
   justify-content: center;
+  overflow: hidden;
+}
+
+.hero-inner {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  height: auto;
-  width: auto;
-  flex-shrink: 0;
+  max-width: 1280px;
+  width: 100%;
+  gap: 2rem;
 }
 
-#arrow-down-img {
-  width: 40px;
-  height: 40px;
-  fill: var(--second-grey);
+.hero-text {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-#arrow-down-img:hover {
+.hero-title {
+  font-family: "Geist", sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-family: "Geist", sans-serif;
+  font-size: 24px;
+  line-height: 1.1;
+  color: #808080;
+  margin: 0;
+}
+
+.hero-cta {
+  margin-top: 1rem;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #222;
+  background: #fff;
+  border-radius: 3px;
+  padding: 0.75rem 1.5rem;
   cursor: pointer;
 }
 
-#arrow-down-img:active {
-  transform: scale(0.9);
+.hero-button-text {
+  font-family: "Geist", sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  margin-right: 0.5rem;
+}
+
+.hero-button-icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  display: block;
+}
+
+.hero-media {
+  position: relative;
+  flex: 1 1 400px;
+  min-height: 400px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  display: block;
+}
+
+.blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.blue-blob img,
+.red-blob img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  max-width: 50%;
+}
+
+.testimonial-quote {
+  font-family: "Geist", sans-serif;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+}
+
+.testimonial-author {
+  font-family: "Geist", sans-serif;
+  color: #5e5e5e;
+  margin: 0;
 }
